@@ -46,20 +46,31 @@
                 <div class="col-md-6">
                     <div class="p-4 border rounded-3 bg-light shadow-sm">
                         <h3 class="driada-titulo-seccion mb-3">Envianos un mensaje</h3>
-                        <form>
+                        {% with mensajes = get_flashed_messages(with_categories=true) %}
+                            {% for categoria, mensaje in mensajes %}
+                                <div class="alert alert-{{ categoria }}" role="status">{{ mensaje }}</div>
+                            {% endfor %}
+                        {% endwith %}
+                        {% if error %}
+                            <div class="alert alert-danger" role="alert">{{ error }}</div>
+                        {% endif %}
+                        <form method="post" action="{{ url_for('contacto') }}">
                             <div class="mb-3">
                                 <label for="nombre" class="form-label fw-bold">Nombre y apellido</label>
-                                <input type="text" class="form-control" id="nombre" placeholder="Tu nombre completo">
+                                <input type="text" class="form-control" id="nombre" name="nombre" maxlength="120" required
+                                       value="{{ form_data.get('nombre', '') if form_data else '' }}" placeholder="Tu nombre completo">
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label fw-bold">Correo electrónico</label>
-                                <input type="email" class="form-control" id="email" placeholder="tucorreo@ejemplo.com">
+                                <input type="email" class="form-control" id="email" name="email" maxlength="254" required
+                                       value="{{ form_data.get('email', '') if form_data else '' }}" placeholder="tucorreo@ejemplo.com">
                             </div>
                             <div class="mb-3">
                                 <label for="mensaje" class="form-label fw-bold">Consulta sobre productos</label>
-                                <textarea class="form-control" id="mensaje" rows="4" placeholder="¿Qué productos querés consultar o reservar?"></textarea>
+                                <textarea class="form-control" id="mensaje" name="mensaje" rows="4" maxlength="2000" required
+                                          placeholder="¿Qué productos querés consultar o reservar?">{{ form_data.get('mensaje', '') if form_data else '' }}</textarea>
                             </div>
-                            <button type="button" class="btn btn-success driada-btn w-100 py-2" onclick="alert('¡Mensaje simulado enviado con éxito! Nos pondremos en contacto.')">Enviar consulta</button>
+                            <button type="submit" class="btn btn-success driada-btn w-100 py-2">Enviar consulta</button>
                         </form>
                     </div>
                 </div>
@@ -69,7 +80,7 @@
                     <div class="p-4 border rounded-3 bg-white shadow-sm h-100">
                         <h4 class="driada-prod-titulo mb-3">📍 Local Driada</h4>
                         <p class="driada-prod-texto mb-2"><strong>Dirección:</strong> Antonio Tomba 35, Godoy Cruz, Mendoza</p>
-                        <p class="driada-prod-texto mb-2"><strong>Instagram:</strong> <a href="https://www.instagram.com/driadadietetica/" target="_blank" class="text-success fw-bold">@driadadietetica</a></p>
+                        <p class="driada-prod-texto mb-2"><strong>Instagram:</strong> <a target="_blank" href="https://www.instagram.com/driadadietetica/" class="text-success fw-bold">@driadadietetica</a></p>
                         <p class="driada-prod-texto mt-3">Escribinos o visitanos para recibir asesoramiento personalizado en alimentación saludable.</p>
                     </div>
                 </div>
