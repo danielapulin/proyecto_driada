@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <meta name="author" content="Gabriela Nieva y Equipo">
+  <title>{% block title %}Driada Dietética y Herboristería{% endblock %}</title>
+  
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- CSS compartido del sitio usando url_for de Flask -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='principal/estilos.css') }}">
+  
+  <!-- Bloque opcional para CSS específico de cada página -->
+  {% block extra_css %}{% endblock %}
+</head>
+<body>
+
+  <!-- ================= NAVBAR COMPARTIDO ================= -->
+  <nav class="navbar navbar-expand-lg driada-nav fixed-top">
+    <div class="container">
+      <a class="navbar-brand driada-brand" href="{{ url_for('index') }}">🌿 Driada</a>
+      
+      <!-- Menú hamburguesa para dispositivos móviles -->
+      <button class="navbar-toggler driada-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto gap-1">
+          <li class="nav-item">
+            <a class="nav-link driada-link" href="{{ url_for('index') }}">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link driada-link" href="{{ url_for('productos') }}">Productos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link driada-link" href="{{ url_for('contacto') }}">Contacto</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= CONTENIDO DINÁMICO ================= -->
+  <main>
+    {% block content %}
+      <!-- Aquí se inyectará el contenido particular de cada vista (productos, inicio, contacto) -->
+    {% endblock %}
+  </main>
+
+  <!-- ================= FOOTER COMPARTIDO ================= -->
+  <footer class="driada-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="driada-footer-marca">🌿 Driada</div>
+          <p class="driada-footer-texto">Dietética y Herboristería natural en Godoy Cruz, Mendoza.</p>
+        </div>
+        <div class="col-md-4">
+          <div class="driada-footer-titulo">Navegación</div>
+          <ul class="list-unstyled">
+            <li><a href="{{ url_for('index') }}" class="driada-footer-link">Inicio</a></li>
+            <li><a href="{{ url_for('productos') }}" class="driada-footer-link">Productos</a></li>
+            <li><a href="{{ url_for('contacto') }}" class="driada-footer-link">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <div class="driada-footer-titulo">Contacto</div>
+          <p class="driada-footer-texto">📍 Antonio Tomba 35, Godoy Cruz</p>
+          <p class="driada-footer-texto">📸 <a href="https://www.instagram.com/driadadietetica/" class="driada-footer-link" target="_blank">@driadadietetica</a></p>
+        </div>
+      </div>
+      <hr class="driada-footer-hr">
+      <p class="text-center driada-footer-copy">© 2026 Driada Dietética · Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5.3 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Bloque opcional para scripts de JS específicos -->
+  {% block extra_js %}{% endblock %}
+</body>
+</html>

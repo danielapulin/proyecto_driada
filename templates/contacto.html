@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Daniela Pulin">
+    <title>Contacto – Driada Dietética</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='contacto/formulario.css') }}">
+</head>
+<body>
+
+    <!-- BARRA DE NAVEGACIÓN -->
+    <nav class="navbar navbar-expand-lg driada-nav fixed-top bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand driada-brand" href="{{ url_for('index') }}">🌿 Driada</a>
+            <button class="navbar-toggler driada-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto gap-1">
+                    <li class="nav-item"><a class="nav-link driada-link" href="{{ url_for('index') }}">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link driada-link" href="{{ url_for('productos') }}">Productos</a></li>
+                    <li class="nav-item"><a class="nav-link driada-link active" href="{{ url_for('contacto') }}">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO DE CONTACTO -->
+    <section class="driada-hero text-center" style="margin-top: 80px; padding: 60px 0;">
+        <div class="container">
+            <p class="driada-eyebrow">Dietética y Herboristería · Godoy Cruz, Mendoza</p>
+            <h1 class="driada-hero-titulo">Contacto</h1>
+            <p class="driada-hero-sub">Comunicate con nosotros para consultas, precios y pedidos personalizados.</p>
+        </div>
+    </section>
+
+    <!-- SECCIÓN FORMULARIO Y DATOS -->
+    <section class="driada-seccion py-5">
+        <div class="container">
+            <div class="row g-4 justify-content-center">
+                
+                <!-- Formulario -->
+                <div class="col-md-6">
+                    <div class="p-4 border rounded-3 bg-light shadow-sm">
+                        <h3 class="driada-titulo-seccion mb-3">Envianos un mensaje</h3>
+                        <form>
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label fw-bold">Nombre y apellido</label>
+                                <input type="text" class="form-control" id="nombre" placeholder="Tu nombre completo">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label fw-bold">Correo electrónico</label>
+                                <input type="email" class="form-control" id="email" placeholder="tucorreo@ejemplo.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="mensaje" class="form-label fw-bold">Consulta sobre productos</label>
+                                <textarea class="form-control" id="mensaje" rows="4" placeholder="¿Qué productos querés consultar o reservar?"></textarea>
+                            </div>
+                            <button type="button" class="btn btn-success driada-btn w-100 py-2" onclick="alert('¡Mensaje simulado enviado con éxito! Nos pondremos en contacto.')">Enviar consulta</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Información de Ubicación -->
+                <div class="col-md-4">
+                    <div class="p-4 border rounded-3 bg-white shadow-sm h-100">
+                        <h4 class="driada-prod-titulo mb-3">📍 Local Driada</h4>
+                        <p class="driada-prod-texto mb-2"><strong>Dirección:</strong> Antonio Tomba 35, Godoy Cruz, Mendoza</p>
+                        <p class="driada-prod-texto mb-2"><strong>Instagram:</strong> <a href="https://www.instagram.com/driadadietetica/" target="_blank" class="text-success fw-bold">@driadadietetica</a></p>
+                        <p class="driada-prod-texto mt-3">Escribinos o visitanos para recibir asesoramiento personalizado en alimentación saludable.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
