@@ -9,7 +9,7 @@ Prototipo web navegable desarrollado como Examen Parcial N° 2 de Práctica Prof
 | Matías Villegas | Programador | [@maty2399](https://github.com/maty2399) |
 | Gabriela Nieva | Programadora / Diseñadora | [@GabrielaN0](https://github.com/GabrielaN0) |
 | Daniela Pulin | Programadora | [@danielapulin](https://github.com/danielapulin) |
-| Belén Mansilla | Front-end / Documentadora | [@bmansillaroque-hash](https://github.com/bmansillaroque-hash) |
+| Belén Mansilla | Programadora / Documentadora | [@bmansillaroque-hash](https://github.com/bmansillaroque-hash) |
 ## 📄 Páginas
 
 - **Inicio** → `http://127.0.0.1:5000/`
@@ -43,13 +43,13 @@ Set-Content -Path .env -Value "SECRET_KEY=$secret"
 python .\app.py
 ```
 
-Si PowerShell impide activar el entorno virtual, ejecutá
+Si PowerShell / terminal, impide activar el entorno virtual, ejecutá
 `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass` en esa misma
 ventana y volvé a activar `.venv`.
 
 El comando genera una `SECRET_KEY` propia para esa instalación. El archivo
-`.env` la conserva entre reinicios y está excluido de Git: no lo compartas ni
-lo subas. El archivo `.env.example` es solo una referencia, no se usa como
+`.env` la conserva entre reinicios y está excluido de Git:Por eso no se comparte ni se sube el .env con key.
+El archivo `.env.example` es solo una referencia, no se usa como
 configuración activa.
 
 Con Flask iniciado, abrí `http://127.0.0.1:5000`. Si no se incluyó la base de
@@ -58,7 +58,7 @@ aplicación crea `instance/driada.sqlite3` y las tablas necesarias. Esa base
 local comienza sin mensajes de contacto; los nuevos se guardan en
 `contact_messages`.
 
-Para detener el servidor, presioná `Ctrl+C` en PowerShell. En futuras sesiones,
+Para detener el servidor, presioná `Ctrl+C` en la terminal. En futuras sesiones,
 volvé a la carpeta del proyecto, activá `.venv` y ejecutá `python .\app.py`;
 no vuelvas a generar la clave si ya existe `.env`.
 
