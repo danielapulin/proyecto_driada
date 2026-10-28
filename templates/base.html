@@ -30,13 +30,13 @@
       <div class="collapse navbar-collapse" id="navMenu">
         <ul class="navbar-nav ms-auto gap-1">
           <li class="nav-item">
-            <a class="nav-link driada-link" href="{{ url_for('index') }}">Inicio</a>
+            <a class="nav-link driada-link{% if request.endpoint == 'index' %} active{% endif %}" href="{{ url_for('index') }}">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link driada-link" href="{{ url_for('productos') }}">Productos</a>
+            <a class="nav-link driada-link{% if request.endpoint == 'productos' %} active{% endif %}" href="{{ url_for('productos') }}">Productos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link driada-link" href="{{ url_for('contacto') }}">Contacto</a>
+            <a class="nav-link driada-link{% if request.endpoint == 'contacto' %} active{% endif %}" href="{{ url_for('contacto') }}">Contacto</a>
           </li>
         </ul>
       </div>
@@ -69,7 +69,7 @@
         <div class="col-md-4">
           <div class="driada-footer-titulo">Contacto</div>
           <p class="driada-footer-texto">📍 Antonio Tomba 35, Godoy Cruz</p>
-          <p class="driada-footer-texto">📸 <a href="https://www.instagram.com/driadadietetica/" class="driada-footer-link" target="_blank">@driadadietetica</a></p>
+          <p class="driada-footer-texto">📸 <a href="https://www.instagram.com/driadadietetica/" class="driada-footer-link" target="_blank" rel="noopener noreferrer">@driadadietetica</a></p>
         </div>
       </div>
       <hr class="driada-footer-hr">

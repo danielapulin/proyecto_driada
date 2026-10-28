@@ -25,7 +25,7 @@
   </section>
 
   <!-- FRUTOS SECOS Y SEMILLAS -->
-  <section class="driada-seccion">
+  <section id="frutos-secos" class="driada-seccion">
     <div class="container">
       <h2 class="driada-titulo-seccion text-center mb-4">🥜 Frutos secos y semillas</h2>
       <div class="row g-4">
@@ -68,7 +68,7 @@
   </section>
 
   <!-- HARINAS Y CEREALES -->
-  <section class="driada-seccion driada-seccion-crema">
+  <section id="harinas-cereales" class="driada-seccion driada-seccion-crema">
     <div class="container">
       <h2 class="driada-titulo-seccion text-center mb-4">🌾 Harinas y cereales</h2>
       <div class="row g-4">
@@ -111,7 +111,7 @@
   </section>
 
   <!-- SUPLEMENTOS -->
-  <section class="driada-seccion">
+  <section id="suplementos" class="driada-seccion">
     <div class="container">
       <h2 class="driada-titulo-seccion text-center mb-4">💊 Suplementos naturales</h2>
       <div class="row g-4">
@@ -155,26 +155,5 @@
 {% endblock %}
 
 {% block extra_js %}
-<!-- Script JS del Buscador optimizado para Bootstrap -->
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const inputBuscador = document.getElementById("buscadorProductos");
-    const items = document.querySelectorAll(".item-producto");
-
-    if (inputBuscador) {
-      inputBuscador.addEventListener("input", (e) => {
-        const texto = e.target.value.toLowerCase().trim();
-
-        items.forEach((item) => {
-          const nombre = item.getAttribute("data-nombre") || "";
-          if (nombre.includes(texto)) {
-            item.style.display = ""; // Restablece el diseño original de Bootstrap
-          } else {
-            item.style.display = "none"; // Oculta la tarjeta que no coincide
-          }
-        });
-      });
-    }
-  });
-</script>
+<script src="{{ url_for('static', filename='productos/buscador.js') }}" defer></script>
 {% endblock %}

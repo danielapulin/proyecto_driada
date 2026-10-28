@@ -15,6 +15,86 @@
     </div>
   </section>
 
+  <section class="driada-seccion">
+    <div class="container">
+      <h2 class="driada-titulo-seccion text-center mb-4">Lo que nos representa</h2>
+      <div id="carouselDriada" class="carousel slide driada-carousel" data-bs-ride="carousel" data-bs-interval="6000">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselDriada" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Productos naturales"></button>
+          <button type="button" data-bs-target="#carouselDriada" data-bs-slide-to="1" aria-label="Aceites y tinturas"></button>
+          <button type="button" data-bs-target="#carouselDriada" data-bs-slide-to="2" aria-label="Infusiones y hierbas"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="driada-slide d-flex align-items-center justify-content-center">
+              <div class="text-center">
+                <div class="driada-slide-icono" aria-hidden="true">🌱</div>
+                <h3 class="driada-slide-titulo">Productos naturales</h3>
+                <p class="driada-slide-texto">Semillas, frutos secos, harinas integrales y más, seleccionados para acompañar tu bienestar.</p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="driada-slide d-flex align-items-center justify-content-center">
+              <div class="text-center">
+                <div class="driada-slide-icono" aria-hidden="true">🍶</div>
+                <h3 class="driada-slide-titulo">Aceites y tinturas</h3>
+                <p class="driada-slide-texto">Alternativas naturales para sumar a tus hábitos de cuidado personal.</p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="driada-slide d-flex align-items-center justify-content-center">
+              <div class="text-center">
+                <div class="driada-slide-icono" aria-hidden="true">🍵</div>
+                <h3 class="driada-slide-titulo">Infusiones y hierbas</h3>
+                <p class="driada-slide-texto">Descubrí opciones para disfrutar de tus infusiones todos los días.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselDriada" data-bs-slide="prev" aria-label="Anterior">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselDriada" data-bs-slide="next" aria-label="Siguiente">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="driada-seccion driada-seccion-crema">
+    <div class="container">
+      <h2 class="driada-titulo-seccion text-center mb-4">Nuestras categorías</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <article class="driada-card">
+            <div class="driada-card-icono" aria-hidden="true">🥜</div>
+            <h3 class="driada-card-titulo">Frutos secos y semillas</h3>
+            <p class="driada-card-texto">Almendras, nueces, chía y más para sumar variedad a tu alimentación.</p>
+            <a href="{{ url_for('productos', _anchor='frutos-secos') }}" class="driada-link-card">Ver productos →</a>
+          </article>
+        </div>
+        <div class="col-md-4">
+          <article class="driada-card">
+            <div class="driada-card-icono" aria-hidden="true">🌾</div>
+            <h3 class="driada-card-titulo">Harinas y cereales</h3>
+            <p class="driada-card-texto">Avena, granola y cereales para tus comidas y desayunos.</p>
+            <a href="{{ url_for('productos', _anchor='harinas-cereales') }}" class="driada-link-card">Ver productos →</a>
+          </article>
+        </div>
+        <div class="col-md-4">
+          <article class="driada-card">
+            <div class="driada-card-icono" aria-hidden="true">🧴</div>
+            <h3 class="driada-card-titulo">Suplementos naturales</h3>
+            <p class="driada-card-texto">Vitaminas, minerales y suplementos para complementar tu nutrición diaria.</p>
+            <a href="{{ url_for('productos', _anchor='suplementos') }}" class="driada-link-card">Ver productos →</a>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!--  SECCIÓN DESTACADOS / BIENVENIDA  -->
   <section class="driada-seccion">
     <div class="container">
@@ -30,7 +110,7 @@
           <div class="p-4 border rounded-3 bg-light shadow-sm">
             <h4 class="driada-prod-titulo mb-2">📍 Te esperamos</h4>
             <p class="driada-prod-texto mb-1">Antonio Tomba 35, Godoy Cruz, Mendoza</p>
-            <p class="driada-prod-texto">Instagram: <a href="https://www.instagram.com/driadadietetica/" target="_blank">@driadadietetica</a></p>
+            <p class="driada-prod-texto">Instagram: <a href="https://www.instagram.com/driadadietetica/" target="_blank" rel="noopener noreferrer">@driadadietetica</a></p>
           </div>
         </div>
       </div>
