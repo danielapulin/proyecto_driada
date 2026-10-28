@@ -8,6 +8,12 @@
    CARDS DE PRODUCTO
    Usamos <figure> como tag HTML5 requerido por la rúbrica
    ---------------- */
+#frutos-secos,
+#harinas-cereales,
+#suplementos {
+  scroll-margin-top: 5rem;
+}
+
 .driada-prod-card {
   background-color: var(--blanco);
   border: 1px solid #ddd6c8;

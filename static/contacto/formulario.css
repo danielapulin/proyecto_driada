@@ -27,6 +27,11 @@ body {
     padding-top: 10px; /* deja espacio para el navbar fijo, igual que en principal */
 }
 
+.driada-contacto-hero {
+    margin-top: 80px;
+    padding: 60px 0;
+}
+
 .driada-seccion-crema {
     background-color: var(--crema);
     padding: 60px 0;
