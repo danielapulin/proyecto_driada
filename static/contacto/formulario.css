@@ -24,12 +24,6 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--blanco);
     color: #2b2318;
-    padding-top: 10px; /* deja espacio para el navbar fijo, igual que en principal */
-}
-
-.driada-contacto-hero {
-    margin-top: 80px;
-    padding: 60px 0;
 }
 
 .driada-seccion-crema {
